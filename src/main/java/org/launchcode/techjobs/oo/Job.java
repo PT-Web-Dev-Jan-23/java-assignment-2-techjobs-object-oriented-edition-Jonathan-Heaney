@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Job {
@@ -47,6 +49,52 @@ public class Job {
         return Objects.hash(getId());
     }
 
+    // Add toString method
+    @Override
+    public String toString() {
+        // Why doesn't this code work?
+//        ArrayList<Object> fieldList = new ArrayList<>();
+//        fieldList.add(employer);
+//        fieldList.add(location);
+//        fieldList.add(positionType);
+//        fieldList.add(coreCompetency);
+//
+//        for (Object field : fieldList) {
+//            if(field.toString() == "") {
+//                field.setValue("Data not available");
+//            }
+//        }
+        
+        if (name == "") {
+            name = "Data not available"; 
+        }
+
+        if (employer.toString() == "") {
+            employer.setValue("Data not available");
+        }
+
+        if (location.toString() == "") {
+            location.setValue("Data not available");
+        }
+
+        if (positionType.toString() == "") {
+            positionType.setValue("Data not available");
+        }
+
+        if (coreCompetency.toString() == "") {
+            coreCompetency.setValue("Data not available");
+        }
+
+
+        return "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency +
+                "\n";
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
